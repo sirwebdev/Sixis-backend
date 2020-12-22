@@ -4,14 +4,17 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
+        "docker": "docker-compose up -d",
         "dev:server": "tsnd -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_module src/shared/infra/http/server.ts",
-        "test": "jest"
+        "test": "jest",
+        "migration": "yarn typeorm migration:run"
     },
     "dependencies": {
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1",
         "jsonwebtoken": "^8.5.1",
+        "pg": "^8.5.1",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.4.0",
         "typeorm": "^0.2.29",

@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+    nodejs:
+        container_name: node
+        build:
+            context: './'
+            dockerfile: DockerFile
+        volumes:
+            - .:/home/node/api
+            - /home/node/node_modules
+        depends_on:
+            - postgres
+        networks:
+            - app-connect
+        ports:
+            - '3333:3333'
+
+    postgres:
+        container_name: ${DB_NAME}
+        image: postgres:11
+        restart: unless-stopped
+        volumes:
+            - postgres-data:/data
+        environment:
+            POSTGRES_DB: ${DB_NAME}
+            POSTGRES_USER: ${DB_USER}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        networks:
+            - app-connect
+        ports:
+            - '5432:5432'
+
+volumes:
+    postgres-data:
+
+networks:
+    app-connect:
+        driver: bridge

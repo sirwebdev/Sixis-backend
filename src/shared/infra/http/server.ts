@@ -2,9 +2,11 @@ import express, { Request, Response, NextFunction } from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
 
-// import 'express-async-errors';
+import 'express-async-errors';
 
 import AppError from '@shared/errors/AppError';
+
+import '@shared/infra/typeorm';
 
 config();
 

@@ -1,0 +1,13 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "posrt": 5432,
+    "username": "postgres",
+    "password": "docker",
+    "database": "sixis",
+    "entitites": ["./src/modules/**/infra/typeorm/entities/*.ts"],
+    "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
+    "cli": {
+        "migrationsDir": "./src/shared/infra/typeorm/migrations/*.ts"
+    }
+}
