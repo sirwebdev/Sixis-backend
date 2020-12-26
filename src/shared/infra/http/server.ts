@@ -1,15 +1,14 @@
-import express, { Request, Response, NextFunction } from 'express';
-import { config } from 'dotenv';
-import cors from 'cors';
-
+import 'reflect-metadata';
 import 'express-async-errors';
+import 'dotenv/config';
+
+import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 
 import AppError from '@shared/errors/AppError';
 
 import '@shared/infra/typeorm';
 import '@shared/container';
-
-config();
 
 const app = express();
 

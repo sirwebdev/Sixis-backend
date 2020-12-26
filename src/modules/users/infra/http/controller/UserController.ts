@@ -1,15 +1,17 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 import YupValidationProvider from '@modules/users/providers/ValidationProvider/implementations/YupValidationProvider';
+import CreateUserService from '@modules/users/services/CreateUserService';
 
 export default class UserController {
     async create(request: Request, response: Response) {
         const { email } = request.body;
 
-        const yupValidationProvider = new YupValidationProvider();
+        const createUser = container.resolve(CreateUserService);
 
-        await yupValidationProvider.validate({ email });
+        const user = createUser.execute({ email });
 
-        return response.json({ ok: true });
+        return response.json(user);
     }
 }

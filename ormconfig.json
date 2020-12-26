@@ -5,9 +5,9 @@
     "username": "postgres",
     "password": "docker",
     "database": "sixis",
-    "entitites": ["./src/modules/**/infra/typeorm/entities/*.ts"],
-    "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
+    "entitites": ["./src/shared/**/infra/typeorm/entities/*.ts"],
+    "migrations": ["./src/shared/**/infra/typeorm/migrations/*.ts"],
     "cli": {
-        "migrationsDir": "./src/shared/infra/typeorm/migrations/*.ts"
+        "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
 }
