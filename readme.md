@@ -10,17 +10,17 @@
 
 **RF**
 
--   O usuário deve poder fazer login com seu e-mail;
--   O usuário deve poder criar sua conta;
+-   [ ] O usuário deve poder fazer login com seu e-mail;
+-   [x] O usuário deve poder criar sua conta;
 
 **RNF**
 
--   Utilizar o JWT para criar uma sessão;
+-   [ ] Utilizar o JWT para criar uma sessão;
 
 **RN**
 
--   Para logar o e-mail deve existir no banco de dados;
--   Para criar uma conta o usuário deve conter um e-mail inexistente no banco de dados;
+-   [ ] Para logar o e-mail deve existir no banco de dados;
+-   [ ] Para criar uma conta o usuário deve conter um e-mail inexistente no banco de dados;
 
 <br>
 
@@ -30,15 +30,15 @@
 
 **RF**
 
--   O admin deve poder criar uma postagem;
--   O admin deve poder deletar uma postagem;
+-   [ ] O admin deve poder criar uma postagem;
+-   [ ] O admin deve poder deletar uma postagem;
 
 **RNF**
 
 **RN**
 
--   Para a criação de uma postagem devem conter obrigatóriamente titulo, banner e o conteúdo;
--   Ao deletar a postagem deletar o arquivo de upload armazenado;
+-   [ ] Para a criação de uma postagem devem conter obrigatóriamente titulo, banner e o conteúdo;
+-   [ ] Ao deletar a postagem deletar o arquivo de upload armazenado;
 
 <br>
 
@@ -48,16 +48,16 @@
 
 **RF**
 
--   O admin deve poder fazer um upload de foto;
+-   [ ] O admin deve poder fazer um upload de foto;
 
 **RNF**
 
--   Utilizar o multer para o upload de arquivos;
+-   [ ] Utilizar o multer para o upload de arquivos;
 
 **RN**
 
--   Na criação deve alterar o nome do arquivo para uma hash aleatória + a extensão do arquivo
--   Quando excluir um arquivo, excluir também da pasta temp;
+-   [ ] Na criação deve alterar o nome do arquivo para uma hash aleatória + a extensão do arquivo
+-   [ ] Quando excluir um arquivo, excluir também da pasta temp;
 
 <br>
 
@@ -67,11 +67,11 @@
 
 **RF**
 
--   O usuario deve poder listar todas as postagens existentes;
--   O usuário deve poder vizualizar uma postagem específica;
+-   [ ] O usuario deve poder listar todas as postagens existentes;
+-   [ ] O usuário deve poder vizualizar uma postagem específica;
 
 **RNF**
 
 **RN**
 
--   Para vizualizar uma postagem especifica, ter refência do id;
+-   [ ] Para vizualizar uma postagem especifica, ter refência do id;
