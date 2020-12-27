@@ -1,21 +1,21 @@
 import CreateUserService from './CreateUserService';
 
 import FakeUserRepository from '@modules/users/repositories/fakes/FakeUserRepository';
-import ValidationProvider from '@modules/users/providers/ValidationProvider/fakes/FakeValidationProvider';
+import FakeValidationProvider from '@modules/users/providers/ValidationProvider/fakes/FakeValidationProvider';
 
 import AppError from '@shared/errors/AppError';
 
 let createUserService: CreateUserService;
 let fakeUserRepository: FakeUserRepository;
-let validationProvider: ValidationProvider;
+let fakeValidationProvider: FakeValidationProvider;
 
 describe('CreateUserService', () => {
     beforeEach(() => {
         fakeUserRepository = new FakeUserRepository();
-        validationProvider = new ValidationProvider();
+        fakeValidationProvider = new FakeValidationProvider();
         createUserService = new CreateUserService(
             fakeUserRepository,
-            validationProvider,
+            fakeValidationProvider,
         );
     });
 

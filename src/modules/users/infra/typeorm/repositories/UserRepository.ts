@@ -31,6 +31,8 @@ class UserRepository implements IUsersRepository {
             email: email.toLocaleLowerCase(),
         });
 
+        console.log('Cheguei Aqui \n\n\n\n\n\n\n');
+
         await this.ormRepository.save(user);
 
         return user;
