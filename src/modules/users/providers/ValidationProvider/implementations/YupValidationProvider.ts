@@ -12,6 +12,7 @@ export default class YupValidationProvider implements IValidationProvider {
         try {
             const validationShema = Yup.object().shape({
                 email: Yup.string().required('E-mail is required'),
+                type: Yup.string(),
             });
 
             await validationShema.validate(data, { abortEarly: false });

@@ -25,6 +25,7 @@ describe('CreateUserService', () => {
         });
 
         expect(user).toHaveProperty('id');
+        expect(user.type).toBe('user');
     });
 
     it('should not be able to create a new user within an existent email', async () => {
@@ -35,6 +36,17 @@ describe('CreateUserService', () => {
         expect(
             createUserService.execute({
                 email: 'johndoe@example.com',
+            }),
+        ).rejects.toBeInstanceOf(AppError);
+    });
+
+    it('should not be able to create a new user with non-existent type', async () => {
+        const type: any = 'aksdjn';
+
+        expect(
+            createUserService.execute({
+                email: 'johndoe@example.com',
+                type,
             }),
         ).rejects.toBeInstanceOf(AppError);
     });

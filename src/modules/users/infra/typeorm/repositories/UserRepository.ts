@@ -26,12 +26,11 @@ class UserRepository implements IUsersRepository {
         return user;
     }
 
-    async create({ email }: ICreateUserDTO): Promise<User> {
+    async create({ email, type = 'user' }: ICreateUserDTO): Promise<User> {
         const user = this.ormRepository.create({
             email: email.toLocaleLowerCase(),
+            type: type.toLocaleLowerCase(),
         });
-
-        console.log('Cheguei Aqui \n\n\n\n\n\n\n');
 
         await this.ormRepository.save(user);
 

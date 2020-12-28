@@ -10,8 +10,8 @@
 
 **RF**
 
--   [ ] O usuário deve poder fazer login com seu e-mail;
--   [x] O usuário deve poder criar sua conta;
+-   [ ] O admin deve poder fazer login com seu e-mail;
+-   [x] O admin deve poder criar sua conta;
 
 **RNF**
 
@@ -20,7 +20,7 @@
 **RN**
 
 -   [ ] Para logar o e-mail deve existir no banco de dados;
--   [ ] Para criar uma conta o usuário deve conter um e-mail inexistente no banco de dados;
+-   [ ] Para criar uma conta o admin deve conter um e-mail inexistente no banco de dados;
 
 <br>
 

@@ -14,6 +14,9 @@ class User {
     @Column()
     email!: string;
 
+    @Column('varchar', { default: 'user' })
+    type!: string;
+
     @CreateDateColumn()
     created_at!: Date;
 

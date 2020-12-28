@@ -22,11 +22,14 @@ class CreateUserService {
     async execute(data: ICreateUserDTO): Promise<User> {
         await this.ValidationProvider.validate(data);
 
-        const { email } = data;
+        const { email, type = 'user' } = data;
 
         const existentUser = await this.usersRepository.findByEmail(email);
 
-        if (existentUser) throw new AppError('E-mail already exist');
+        if (existentUser) throw new AppError('E-mail already exists');
+
+        if (type !== 'user' && type !== 'admin')
+            throw new AppError('Type does not exists');
 
         const user = await this.usersRepository.create(data);
 
