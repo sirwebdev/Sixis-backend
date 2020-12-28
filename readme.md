@@ -10,17 +10,17 @@
 
 **RF**
 
--   [ ] O admin deve poder fazer login com seu e-mail;
--   [x] O admin deve poder criar sua conta;
+-   [x] O usuário deve poder fazer login com seu e-mail;
+-   [x] O usuário deve poder criar sua conta;
 
 **RNF**
 
--   [ ] Utilizar o JWT para criar uma sessão;
+-   [x] Utilizar o JWT para criar uma sessão;
 
 **RN**
 
--   [ ] Para logar o e-mail deve existir no banco de dados;
--   [ ] Para criar uma conta o admin deve conter um e-mail inexistente no banco de dados;
+-   [x] Para logar o e-mail deve existir no banco de dados;
+-   [x] Para criar uma conta o admin deve conter um e-mail inexistente no banco de dados;
 
 <br>
 
