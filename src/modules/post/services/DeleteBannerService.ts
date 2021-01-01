@@ -1,7 +1,6 @@
 import AppError from '@shared/errors/AppError';
 import IStorageProvider from '@shared/providers/StoragedProvider/models/IStorageProvider';
 import { inject, injectable } from 'tsyringe';
-import Post from '../infra/typeorm/schemas/Post';
 
 import IPostsRespository from '../repositories/IPostsRepository';
 
