@@ -48,15 +48,15 @@
 
 **RF**
 
--   [ ] O admin deve poder fazer um upload de foto;
+-   [x] O admin deve poder fazer um upload de foto;
 
 **RNF**
 
--   [ ] Utilizar o multer para o upload de arquivos;
+-   [x] Utilizar o multer para o upload de arquivos;
 
 **RN**
 
--   [ ] Na criação deve alterar o nome do arquivo para uma hash aleatória + a extensão do arquivo
+-   [x] Na criação deve alterar o nome do arquivo para uma hash aleatória + a extensão do arquivo
 -   [ ] Quando excluir um arquivo, excluir também da pasta temp;
 
 <br>

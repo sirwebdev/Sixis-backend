@@ -12,11 +12,17 @@ class Post {
     @ObjectIdColumn()
     id: ObjectID;
 
+    @Column('uuid')
+    post_id: string;
+
     @Column()
     title: string;
 
     @Column()
     content: string;
+
+    @Column()
+    banner: string;
 
     @CreateDateColumn()
     created_at: Date;

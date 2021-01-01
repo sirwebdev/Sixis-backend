@@ -1,4 +1,5 @@
 import { getMongoRepository, MongoRepository } from 'typeorm';
+import { v4 } from 'uuid';
 
 import Post from '../schemas/Post';
 
@@ -15,10 +16,18 @@ export default class PostsRepository implements IPostsRespository {
     async create({ content, title }: ICreatePostDTO): Promise<Post> {
         const post = this.ormRepository.create({
             content,
+            post_id: v4(),
             title,
+            banner: '',
         });
 
         await this.ormRepository.save(post);
+
+        return post;
+    }
+
+    async findById(post_id: string): Promise<Post | undefined> {
+        const post = await this.ormRepository.findOne({ post_id });
 
         return post;
     }
@@ -27,5 +36,11 @@ export default class PostsRepository implements IPostsRespository {
         const posts = await this.ormRepository.find();
 
         return posts;
+    }
+
+    async save(post: Post): Promise<Post> {
+        const updatedPost = await this.ormRepository.save(post);
+
+        return updatedPost;
     }
 }
