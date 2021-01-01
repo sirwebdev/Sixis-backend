@@ -30,13 +30,13 @@ class AuthenticateUserService {
         const user = await this.usersRepository.findByEmail(email);
 
         if (!user) {
-            throw new AppError('User not found.', 401);
+            throw new AppError('User not found.', 404);
         }
 
         const { secret, expiresIn } = authConfig.jwt;
 
         const token = sign({}, secret, {
-            subject: user.id,
+            subject: JSON.stringify({ id: user.id, type: user.type }),
             expiresIn,
         });
 

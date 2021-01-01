@@ -1,16 +1,16 @@
 import { Router } from 'express';
 
-import usersRouter from '@modules/users/infra/http/routes/users.routes';
+import userRouter from '@modules/users/infra/http/routes/user.routes';
 import sessionRoutes from '@modules/users/infra/http/routes/session.routes';
 
-import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+import postRoutes from '@modules/post/infra/http/routes/post.routes';
 
 const routes = Router();
 
 routes.use('/sessions', sessionRoutes);
 
-routes.use('/users', usersRouter);
+routes.use('/users', userRouter);
 
-routes.use(ensureAuthenticated);
+routes.use('/posts', postRoutes);
 
 export default routes;

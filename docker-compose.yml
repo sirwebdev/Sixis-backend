@@ -1,35 +1,29 @@
 version: '3'
 
 services:
-    nodejs:
-        container_name: node
-        build:
-            context: './'
-            dockerfile: DockerFile
-        volumes:
-            - .:/home/node/api
-            - /home/node/node_modules
-        depends_on:
-            - postgres
-        networks:
-            - app-connect
-        ports:
-            - '3333:3333'
-
     postgres:
-        container_name: ${DB_NAME}
+        container_name: ${POSTGRES_NAME}
         image: postgres:11
         restart: unless-stopped
         volumes:
             - postgres-data:/data
         environment:
-            POSTGRES_DB: ${DB_NAME}
-            POSTGRES_USER: ${DB_USER}
-            POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_NAME}
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
         networks:
             - app-connect
         ports:
             - '5432:5432'
+
+    mongo:
+        container_name: ${MONGO_NAME}
+        image: mongo
+        restart: unless-stopped
+        networks:
+            - app-connect
+        ports:
+            - '27017:27017'
 
 volumes:
     postgres-data:

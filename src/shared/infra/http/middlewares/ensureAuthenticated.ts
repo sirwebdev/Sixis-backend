@@ -28,8 +28,13 @@ export default function ensureAuthenticated(
 
         const { sub } = decoded as ITokenPayload;
 
+        const { id, type }: { id: string; type: 'admin' | 'user' } = JSON.parse(
+            sub,
+        );
+
         request.user = {
-            id: sub,
+            id,
+            type,
         };
 
         return next();

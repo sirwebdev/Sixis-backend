@@ -15,7 +15,7 @@ class CreateUserService {
         @inject('UsersRepository')
         private usersRepository: IUserRepository,
 
-        @inject('ValidationProvider')
+        @inject('UserValidationProvider')
         private ValidationProvider: IValidationProvider,
     ) {}
 
