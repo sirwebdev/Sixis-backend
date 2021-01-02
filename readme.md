@@ -69,7 +69,7 @@
 
 **RF**
 
--   [ ] O usuario deve poder listar todas as postagens existentes;
+-   [x] O usuario deve poder listar todas as postagens existentes;
 -   [ ] O usuário deve poder vizualizar uma postagem específica;
 
 **RNF**

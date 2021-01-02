@@ -17,6 +17,8 @@ const postBannerController = new PostBannerController();
 
 const upload = multer(uploadConfig.multer);
 
+postRoutes.get('/', ensureAuthenticated, postController.index);
+
 postRoutes.post(
     '/',
     ensureAuthenticated,
