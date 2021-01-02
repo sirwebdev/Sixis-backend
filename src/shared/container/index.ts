@@ -3,7 +3,7 @@ import { container } from 'tsyringe';
 import '@modules/users/providers';
 import '@modules/post/providers';
 
-import '@shared/providers';
+import '@shared/container/providers';
 
 import IUserRepository from '@modules/users/repositories/IUserRepository';
 import UserRepository from '@modules/users/infra/typeorm/repositories/UserRepository';

@@ -31,14 +31,14 @@
 **RF**
 
 -   [x] O admin deve poder criar uma postagem;
--   [ ] O admin deve poder deletar uma postagem;
+-   [x] O admin deve poder deletar uma postagem;
 
 **RNF**
 
 **RN**
 
--   [ ] Para a criação de uma postagem devem conter obrigatóriamente titulo, banner e o conteúdo;
--   [ ] Ao deletar a postagem deletar o arquivo de upload armazenado;
+-   [x] Para a criação de uma postagem devem conter obrigatóriamente titulo, banner e o conteúdo;
+-   [x] Ao deletar a postagem deletar o arquivo de upload armazenado;
 
 <br>
 
@@ -49,6 +49,7 @@
 **RF**
 
 -   [x] O admin deve poder fazer um upload de foto;
+-   [x] O admin deve poder atualizar a foto existente;
 
 **RNF**
 
@@ -57,7 +58,8 @@
 **RN**
 
 -   [x] Na criação deve alterar o nome do arquivo para uma hash aleatória + a extensão do arquivo
--   [ ] Quando excluir um arquivo, excluir também da pasta temp;
+-   [x] Quando excluir um arquivo, excluir também da pasta temp;
+-   [ ] Na atualização de uma foto, excluir a existente e atualizar a mesma;
 
 <br>
 

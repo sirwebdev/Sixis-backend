@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
 
-import IStorageProvider from '@shared/providers/StoragedProvider/models/IStorageProvider';
+import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 import IPostsRespository from '../repositories/IPostsRepository';
 
 import AppError from '@shared/errors/AppError';
