@@ -70,10 +70,10 @@
 **RF**
 
 -   [x] O usuario deve poder listar todas as postagens existentes;
--   [ ] O usuário deve poder vizualizar uma postagem específica;
+-   [x] O usuário deve poder vizualizar uma postagem específica;
 
 **RNF**
 
 **RN**
 
--   [ ] Para vizualizar uma postagem especifica, ter refência do id;
+-   [x] Para vizualizar uma postagem especifica, ter refência do id;

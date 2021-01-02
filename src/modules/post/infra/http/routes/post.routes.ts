@@ -19,6 +19,8 @@ const upload = multer(uploadConfig.multer);
 
 postRoutes.get('/', ensureAuthenticated, postController.index);
 
+postRoutes.get('/:post_id', ensureAuthenticated, postController.index);
+
 postRoutes.post(
     '/',
     ensureAuthenticated,
