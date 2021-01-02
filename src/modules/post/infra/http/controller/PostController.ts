@@ -4,6 +4,7 @@ import { container } from 'tsyringe';
 import CreatePostService from '@modules/post/services/CreatePostService';
 import ListPostsService from '@modules/post/services/ListPostsService';
 import ShowPostService from '@modules/post/services/ShowPostService';
+import convertToURL from '@modules/post/utils/convertToURL';
 
 export default class PostController {
     async show(request: Request, response: Response) {
@@ -13,6 +14,8 @@ export default class PostController {
 
         const post = await showPost.execute({ post_id });
 
+        post.banner = !!post.banner ? convertToURL(post.banner) : '';
+
         return response.json(post);
     }
 
@@ -21,7 +24,12 @@ export default class PostController {
 
         const posts = await listPosts.execute();
 
-        return response.json(posts);
+        const mappedPosts = posts.map(post => ({
+            ...post,
+            banner: convertToURL(post.banner),
+        }));
+
+        return response.json(mappedPosts);
     }
 
     async create(request: Request, response: Response) {

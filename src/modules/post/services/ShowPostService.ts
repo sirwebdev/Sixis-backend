@@ -4,6 +4,7 @@ import AppError from '@shared/errors/AppError';
 
 import Post from '../infra/typeorm/schemas/Post';
 import IPostsRespository from '../repositories/IPostsRepository';
+import convertToURL from '../utils/convertToURL';
 
 interface IRequest {
     post_id: string;
