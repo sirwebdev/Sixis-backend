@@ -77,3 +77,21 @@
 **RN**
 
 -   [x] Para vizualizar uma postagem especifica, ter refência do id;
+
+### Realtime
+
+<br>
+
+**RF**
+
+-   [ ] O usuário deve poder saber quando um novo post for criado;
+
+**RNF**
+
+-   [ ] Utilizar o socket.io para a emissão de eventos realtime;
+
+**RN**
+
+-   [ ] Na criação de um post emitir um evento socket;
+
+<br>

@@ -14,7 +14,7 @@ services:
         networks:
             - app-connect
         ports:
-            - '5432:5432'
+            - '${POSTGRES_PORT}:5432'
 
     mongo:
         container_name: ${MONGO_NAME}
@@ -23,7 +23,7 @@ services:
         networks:
             - app-connect
         ports:
-            - '27017:27017'
+            - '${MONGO_PORT}:27017'
 
 volumes:
     postgres-data:
