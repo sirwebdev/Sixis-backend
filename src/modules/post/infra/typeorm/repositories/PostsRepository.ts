@@ -1,10 +1,9 @@
 import { getMongoRepository, MongoRepository } from 'typeorm';
 import { v4 } from 'uuid';
 
-import Post from '../schemas/Post';
-
 import IPostsRespository from '@modules/post/repositories/IPostsRepository';
 import ICreatePostDTO from '@modules/post/dtos/ICreatePostDTO';
+import Post from '../schemas/Post';
 
 export default class PostsRepository implements IPostsRespository {
     private ormRepository: MongoRepository<Post>;

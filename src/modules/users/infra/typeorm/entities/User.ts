@@ -9,19 +9,22 @@ import {
 @Entity('users')
 class User {
     @PrimaryGeneratedColumn('uuid')
-    id!: string;
+    id: string;
 
     @Column()
-    email!: string;
+    email: string;
+
+    @Column()
+    password: string;
 
     @Column('varchar', { default: 'user' })
-    type!: string;
+    type: string;
 
     @CreateDateColumn()
-    created_at!: Date;
+    created_at: Date;
 
     @UpdateDateColumn()
-    updated_at!: Date;
+    updated_at: Date;
 }
 
 export default User;

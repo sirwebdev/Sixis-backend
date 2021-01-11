@@ -3,6 +3,8 @@ import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import { Server } from 'socket.io';
+import { Server as HttpServer } from 'http';
 
 import 'express-async-errors';
 
@@ -14,11 +16,21 @@ import '@shared/container';
 import '@shared/infra/typeorm';
 
 const app = express();
+const serve = new HttpServer(app);
+const io = new Server(serve);
 
 app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.tmpFolder));
 app.use(routes);
+
+io.on('connection', (socket: Server) => {
+    console.log('A user connected');
+
+    socket.on('createPost', message => {
+        console.log('New post created');
+    });
+});
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     if (err instanceof AppError) {
@@ -34,6 +46,13 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
         status: 500,
         message: 'Internal server error',
     });
+});
+
+app.use((request: Request, _: Response, next: NextFunction) => {
+    // @ts-ignore
+    request.socket = io;
+
+    next();
 });
 
 app.listen(process.env.APP_PORT, () => {

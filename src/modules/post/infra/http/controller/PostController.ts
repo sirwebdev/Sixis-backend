@@ -14,7 +14,7 @@ export default class PostController {
 
         const post = await showPost.execute({ post_id });
 
-        post.banner = !!post.banner ? convertToURL(post.banner) : '';
+        post.banner = post.banner ? convertToURL(post.banner) : '';
 
         return response.json(post);
     }
@@ -26,7 +26,7 @@ export default class PostController {
 
         const mappedPosts = posts.map(post => ({
             ...post,
-            banner: convertToURL(post.banner),
+            banner: post.banner ? convertToURL(post.banner) : '',
         }));
 
         return response.json(mappedPosts);

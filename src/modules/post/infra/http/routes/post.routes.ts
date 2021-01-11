@@ -18,7 +18,7 @@ const upload = multer(uploadConfig.multer);
 
 postRoutes.get('/', postController.index);
 
-postRoutes.get('/:post_id', ensureAuthenticated, postController.show);
+postRoutes.get('/:post_id', postController.show);
 
 postRoutes.post(
     '/',
@@ -30,6 +30,8 @@ postRoutes.post(
 postRoutes.patch(
     '/:post_id',
     upload.single('banner'),
+    ensureAuthenticated,
+    ensureAdminType,
     postBannerController.create,
 );
 

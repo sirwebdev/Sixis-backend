@@ -7,9 +7,11 @@ import AppError from '@shared/errors/AppError';
 import IUsersRepository from '../repositories/IUserRepository';
 
 import User from '../infra/typeorm/entities/User';
+import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
     email: string;
+    password: string;
 }
 
 interface IResponse {
@@ -22,9 +24,12 @@ class AuthenticateUserService {
     constructor(
         @inject('UsersRepository')
         private usersRepository: IUsersRepository,
+
+        @inject('HashProvider')
+        private hashProvider: IHashProvider,
     ) {}
 
-    public async execute({ email }: IRequest): Promise<IResponse> {
+    public async execute({ email, password }: IRequest): Promise<IResponse> {
         if (!email) throw new AppError('E-mail is required');
 
         const user = await this.usersRepository.findByEmail(email);
@@ -32,6 +37,13 @@ class AuthenticateUserService {
         if (!user) {
             throw new AppError('User not found.', 404);
         }
+
+        const correctlyPassword = await this.hashProvider.compareHash(
+            password,
+            user.password,
+        );
+
+        if (!correctlyPassword) throw new AppError('Invalid credentials', 401);
 
         const { secret, expiresIn } = authConfig.jwt;
 

@@ -2,9 +2,9 @@ import AppError from '@shared/errors/AppError';
 
 import CreatePostService from '@modules/post/services/CreatePostService';
 import CreateBannerService from '@modules/post/services/CreateBannerService';
+import FakeStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeStorageProvide';
 import FakeValidationProvider from '../providers/ValidationProvider/fakes/FakeValidationProvider';
 import FakePostsRepository from '../repositories/fakes/FakePostsRepository';
-import FakeStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeStorageProvide';
 
 let createPost: CreatePostService;
 let createBanner: CreateBannerService;
