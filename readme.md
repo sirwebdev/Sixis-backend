@@ -31,8 +31,8 @@
 **RF**
 
 -   [x] O admin deve poder criar uma postagem;
--   [ ] O admin deve poder deletar uma postagem;
--   [ ] o admin deve poder editar uma postagem;
+-   [x] O admin deve poder deletar uma postagem;
+-   [x] o admin deve poder editar uma postagem;
 
 **RNF**
 

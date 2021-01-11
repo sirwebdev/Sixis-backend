@@ -35,6 +35,13 @@ postRoutes.patch(
     postBannerController.create,
 );
 
+postRoutes.put(
+    '/:post_id',
+    ensureAuthenticated,
+    ensureAdminType,
+    postController.update,
+);
+
 postRoutes.delete(
     '/:post_id',
     ensureAuthenticated,
