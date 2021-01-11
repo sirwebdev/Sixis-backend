@@ -42,4 +42,8 @@ export default class PostsRepository implements IPostsRespository {
 
         return updatedPost;
     }
+
+    async deletePost(post_id: string): Promise<void> {
+        await this.ormRepository.deleteOne({ post_id });
+    }
 }

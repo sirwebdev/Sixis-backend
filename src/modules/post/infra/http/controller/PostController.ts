@@ -5,6 +5,7 @@ import CreatePostService from '@modules/post/services/CreatePostService';
 import ListPostsService from '@modules/post/services/ListPostsService';
 import ShowPostService from '@modules/post/services/ShowPostService';
 import convertToURL from '@modules/post/utils/convertToURL';
+import DeletePostService from '@modules/post/services/DeletePostService';
 
 export default class PostController {
     async show(request: Request, response: Response) {
@@ -40,5 +41,15 @@ export default class PostController {
         const post = await createPost.execute({ title, content });
 
         response.json(post);
+    }
+
+    async delete(request: Request, response: Response) {
+        const { post_id } = request.params;
+
+        const deletePost = container.resolve(DeletePostService);
+
+        await deletePost.execute({ post_id });
+
+        return response.status(204).json();
     }
 }

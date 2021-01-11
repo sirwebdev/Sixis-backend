@@ -6,4 +6,5 @@ export default interface IPostsRespository {
     findById(post_id: string): Promise<Post | undefined>;
     findAllPosts(): Promise<Post[]>;
     save(post: Post): Promise<Post>;
+    deletePost(post_id: string): Promise<void>;
 }

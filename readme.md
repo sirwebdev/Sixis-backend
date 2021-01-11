@@ -31,7 +31,8 @@
 **RF**
 
 -   [x] O admin deve poder criar uma postagem;
--   [x] O admin deve poder deletar uma postagem;
+-   [ ] O admin deve poder deletar uma postagem;
+-   [ ] o admin deve poder editar uma postagem;
 
 **RNF**
 
@@ -39,6 +40,7 @@
 
 -   [x] Para a criação de uma postagem devem conter obrigatóriamente titulo, banner e o conteúdo;
 -   [x] Ao deletar a postagem deletar o arquivo de upload armazenado;
+
 
 <br>
 

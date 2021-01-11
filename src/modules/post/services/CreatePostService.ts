@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
 
+import IValidationProvider from '@modules/post/providers/ValidationProvider/models/IValidationProvider';
 import Post from '../infra/typeorm/schemas/Post';
 import IPostsRespository from '../repositories/IPostsRepository';
 
 import ICreatePostDTO from '../dtos/ICreatePostDTO';
-import IValidationProvider from '@modules/post/providers/ValidationProvider/models/IValidationProvider';
 
 @injectable()
 export default class CreatePostService {
@@ -20,7 +20,7 @@ export default class CreatePostService {
     async execute(data: ICreatePostDTO): Promise<Post> {
         await this.validationProvider.validate(data);
 
-        let post = await this.postsRepository.create(data);
+        const post = await this.postsRepository.create(data);
 
         // @ts-ignore
         delete post.created_at;

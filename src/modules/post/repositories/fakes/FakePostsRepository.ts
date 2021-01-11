@@ -1,10 +1,9 @@
 import { ObjectID } from 'mongodb';
 import { v4 } from 'uuid';
 
-import Post from '../../infra/typeorm/schemas/Post';
-
 import IPostsRespository from '@modules/post/repositories/IPostsRepository';
 import ICreatePostDTO from '@modules/post/dtos/ICreatePostDTO';
+import Post from '../../infra/typeorm/schemas/Post';
 
 export default class FakePostsRepository implements IPostsRespository {
     private posts: Post[] = [];
@@ -42,5 +41,9 @@ export default class FakePostsRepository implements IPostsRespository {
         this.posts[oldPostIndex] = post;
 
         return post;
+    }
+
+    async deletePost(post_id: string): Promise<void> {
+        this.posts = this.posts.filter(post => post.post_id !== post_id);
     }
 }
