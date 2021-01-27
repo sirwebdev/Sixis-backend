@@ -6,8 +6,8 @@ let fakePostsRepository: FakePostsRepository;
 
 describe('ListPostsService', () => {
     beforeEach(() => {
-        (fakePostsRepository = new FakePostsRepository()),
-            (listPosts = new ListPostsService(fakePostsRepository));
+        fakePostsRepository = new FakePostsRepository();
+        listPosts = new ListPostsService(fakePostsRepository);
     });
 
     it('should be able to list all storaged posts', async () => {

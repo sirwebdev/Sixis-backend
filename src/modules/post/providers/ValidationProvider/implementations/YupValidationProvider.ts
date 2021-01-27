@@ -4,8 +4,8 @@ import AppError from '@shared/errors/AppError';
 
 import ValidationYupErrors from '@shared/errors/ValidationYupErrors';
 
-import IValidationProvider from '../models/IValidationProvider';
 import ICreatePostDTO from '@modules/post/dtos/ICreatePostDTO';
+import IValidationProvider from '../models/IValidationProvider';
 
 export default class YupValidationProvider implements IValidationProvider {
     async validate(data: ICreatePostDTO): Promise<void | AppError> {

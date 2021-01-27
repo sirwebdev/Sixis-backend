@@ -47,6 +47,7 @@ describe('CreateUserService', () => {
     });
 
     it('should not be able to create a new user with non-existent type', async () => {
+        // eslint-disable-next-line
         const type: any = 'aksdjn';
 
         expect(

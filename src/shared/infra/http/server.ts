@@ -27,7 +27,7 @@ app.use(routes);
 io.on('connection', (socket: Server) => {
     console.log('A user connected');
 
-    socket.on('createPost', message => {
+    socket.on('createPost', () => {
         console.log('New post created');
     });
 });

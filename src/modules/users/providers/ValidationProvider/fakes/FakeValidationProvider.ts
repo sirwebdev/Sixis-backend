@@ -1,7 +1,7 @@
 import AppError from '@shared/errors/AppError';
 
-import IValidationProvider from '../models/IValidationProvider';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
+import IValidationProvider from '../models/IValidationProvider';
 
 export default class FakeValidationProvider implements IValidationProvider {
     async validate(data: ICreateUserDTO): Promise<void | AppError> {

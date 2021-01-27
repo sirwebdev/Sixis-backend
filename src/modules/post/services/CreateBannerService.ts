@@ -1,10 +1,8 @@
-import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
 
 import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
-import IPostsRespository from '../repositories/IPostsRepository';
-
 import AppError from '@shared/errors/AppError';
+import IPostsRespository from '../repositories/IPostsRepository';
 
 import Post from '../infra/typeorm/schemas/Post';
 
@@ -24,9 +22,9 @@ export default class CreateBannerService {
     ) {}
 
     async execute({ post_id, filename }: IRequest): Promise<Post> {
-        let post = await this.postsRepository.findById(post_id);
+        const post = await this.postsRepository.findById(post_id);
 
-        if (!!!filename) throw new AppError('File is required');
+        if (!filename) throw new AppError('File is required');
 
         if (!post) throw new AppError('Post does not exists', 404);
 

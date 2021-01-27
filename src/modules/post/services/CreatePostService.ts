@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
 
 import IValidationProvider from '@modules/post/providers/ValidationProvider/models/IValidationProvider';

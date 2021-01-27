@@ -52,6 +52,7 @@ describe('CreateBannerService', () => {
     });
 
     it('should not be able to update a post banner with empty banner file', async () => {
+        // eslint-disable-next-line
         const filename: any = undefined;
 
         expect(

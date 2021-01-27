@@ -12,9 +12,9 @@ interface IUploadConfig {
         storage: StorageEngine;
     };
 
-    config: {
-        disk: {};
-    };
+    // config: {
+    //     disk: {};
+    // };
 }
 
 export default {
