@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "docker": "sudo docker-compose up -d",
+        "docker": "docker-compose up -d",
         "dev:server": "tsnd -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_module src/shared/infra/http/server.ts",
         "test": "jest",
         "migration": "yarn typeorm migration:run",
